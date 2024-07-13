@@ -1,0 +1,1 @@
+emcmake cmake . -DTANGRAM_PLATFORM=emscripten -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
