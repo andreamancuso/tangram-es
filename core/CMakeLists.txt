@@ -339,3 +339,8 @@ if(CMAKE_VERSION VERSION_GREATER "3.8")
   get_target_property(TANGRAM_CORE_SOURCES tangram-core SOURCES)
   source_group(TREE ${PROJECT_SOURCE_DIR} FILES ${TANGRAM_CORE_SOURCES})
 endif()
+
+add_definitions(-w)
+
+set_target_properties(tangram-core PROPERTIES COMPILE_FLAGS "-O0 -w --use-port=zlib --use-port=libpng")
+set_target_properties(tangram-core PROPERTIES LINK_FLAGS "-O0 --use-port=zlib --use-port=libpng -s USE_GLFW=3 -s USE_WEBGPU=1 -s FULL_ES3=1 -sOFFSCREENCANVAS_SUPPORT -s EXPORT_ALL=1")
